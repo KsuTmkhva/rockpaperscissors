@@ -43,6 +43,14 @@ def game_page():
         else:
             flash("Draw", "draw")
         
+        session['last_result'] = result
+        session['last_computer'] = computer
+
+        return redirect('/game')
+    
+    result = session.pop('last_result', None)
+    computer = session.pop('last_computer', None)
+        
     player_score = score['win']
     computer_score = score['lose']
 
