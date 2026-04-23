@@ -1,0 +1,19 @@
+{% extends "layout.html"%}
+{% block content %}
+    <div class="game-icons">
+        <i id="play" class="fa-regular fa-hand-back-fist"></i>
+        <i id="play" class="fa-regular fa-hand-scissors"></i>
+        <i id="play" class="fa-regular fa-hand"></i>
+    </div>
+    <p class="intro">
+        Welcome! <br>
+        Can you beat the computer in the classic game of <strong>Rock, Paper, Scissors</strong>?
+    </p>
+
+    <div class="rules">
+        <p><strong>Rock</strong> beats Scissors</p>
+        <p><strong>Scissors</strong> beat Paper</p>
+        <p><strong>Paper</strong> beats Rock</p>
+    </div>
+    <button id="start"><a href="/game">Start</a></button>
+{% endblock %}

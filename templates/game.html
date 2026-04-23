@@ -1,0 +1,32 @@
+{% extends "layout.html"%}
+{% block content %}
+        <button id="back"><a href="/">←</a></button>
+        <h2>Score: {{ computer_score }} : {{ player_score }}</h2>
+        <p>Computer</p>
+        {% if result %}
+            <p>
+                {% if computer == 'rock' %}
+                    <i id="computer" class="fa-regular fa-hand-back-fist"></i>
+                {% elif computer == 'scissors' %}
+                    <i id="computer" class="fa-regular fa-hand-scissors"></i>
+                {% elif computer == 'paper' %}
+                    <i id="computer" class="fa-regular fa-hand"></i>
+                {% endif %}
+            </p>
+        {% endif %}
+        <p>VS</p>
+
+        <form method="post">
+            <button id="play" name="choice" value="rock"><i class="fa-regular fa-hand-back-fist"></i></button>
+            <button id="play" name="choice" value="scissors"><i class="fa-regular fa-hand-scissors"></i></button>
+            <button id="play" name="choice" value="paper"><i class="fa-regular fa-hand"></i></button>
+        </form>
+    
+    <div id="statistic">
+        <h3>Your statistic</h3>
+        <p>Victories: {{ score.win }}</p>
+        <p>Defeats: {{ score.lose }}</p>
+        <p>Draw: {{ score.draw }}</p>
+    </div>
+        <button id="reset"><a href="/reset">Reset the score</a></button>
+{% endblock %}
