@@ -50,12 +50,8 @@ def game_page():
     
     result = session.pop('last_result', None)
     computer = session.pop('last_computer', None)
-        
-    player_score = score['win']
-    computer_score = score['lose']
 
-    return render_template('game.html', result=result, computer=computer, score=session['score'], player_score=player_score,
-    computer_score=computer_score)
+    return render_template('game.html', result=result, computer=computer, score=session['score'])
 
 @app.route('/reset')
 def reset():

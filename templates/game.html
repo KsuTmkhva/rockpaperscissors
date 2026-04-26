@@ -1,7 +1,7 @@
 {% extends "layout.html"%}
 {% block content %}
         <button id="back"><a href="/">←</a></button>
-        <h2>Score: {{ computer_score }} : {{ player_score }}</h2>
+        <h2>Score: {{ score.lose }} : {{ score.win }}</h2>
         <p>Computer</p>
         {% if result %}
             <p>
